@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "test.h": "c",
+        "win32drv.h": "c",
+        "lv_demo_widgets.h": "c",
+        "bg_page.h": "c",
+        "main_page.h": "c",
+        "anim.h": "c",
+        "stdio.h": "c",
+        "lvgl.h": "c",
+        "fan_page.h": "c",
+        "ac_page.h": "c",
+        "cstdio": "c",
+        "style.h": "c",
+        "setting_page.h": "c",
+        "lv_common.h": "c"
+    }
+}

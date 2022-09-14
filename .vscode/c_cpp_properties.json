@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "lvgl",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lvgl/**",
+                "${workspaceFolder}/lv_drivers/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPath": "D:/program/CodeBlocks/MinGW/bin/gcc.exe",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
