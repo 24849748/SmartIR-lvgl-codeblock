@@ -1,6 +1,7 @@
 #include "setting_page.h"
 // #include "bg_page.h"
 #include "main_page.h"
+#include "../anim/anim.h"
 #include "../common/lv_common.h"
 
 #include <stdio.h>
@@ -11,11 +12,26 @@ static lv_obj_t * btn_return;
 static lv_obj_t * hello_text;
 static lv_obj_t * title_setting;
 
-void remove_setting_page_obj(void){
-    lv_obj_del(btn_return);
-    lv_obj_del(hello_text);
-    lv_obj_del(title_setting);
+
+
+// void remove_setting_page_obj(void){
+//     lv_obj_del(btn_return);
+//     lv_obj_del(hello_text);
+//     lv_obj_del(title_setting);
+// }
+
+void setting_page_anim_in(uint32_t delay){
+    anim_y_fade_in(title_setting,-50, 10, delay,NULL);
+    anim_y_fade_in(btn_return,-50, 10, delay, NULL);
+    anim_y_fade_in(hello_text, 20, lv_obj_get_y(hello_text), delay, NULL);
 }
+
+void setting_page_anim_out(uint32_t delay){
+    anim_y_fade_out(title_setting,lv_obj_get_y(title_setting), -50, delay,lv_obj_del_anim_ready_cb);
+    anim_y_fade_out(btn_return,lv_obj_get_y(btn_return), -50, delay,lv_obj_del_anim_ready_cb);
+    anim_y_fade_out(hello_text,lv_obj_get_y(hello_text), 20, delay,lv_obj_del_anim_ready_cb);
+}
+
 
 
 /* 按钮回调函数 */
@@ -25,7 +41,8 @@ static void return_mainpage_cb(lv_event_t *e){
         //led_blink(PIN_LED);
         // anim_mainpage_out(0);
         printf("return main page\n");
-        remove_setting_page_obj();
+        // remove_setting_page_obj();
+        setting_page_anim_out(200);
         show_main_page();
     }
 }
@@ -93,4 +110,5 @@ void show_setting_page(void){
     show_title_setting();
     show_test();
     create_setting_btn();
+    setting_page_anim_in(200);
 }
