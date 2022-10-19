@@ -57,8 +57,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     printf("init over\n");
 
     /*Run the demo*/
-    //lv_demo_widgets();
-    //my_app();
     bg_page();
     show_main_page();
 
