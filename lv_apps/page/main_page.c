@@ -17,7 +17,7 @@
 #define CTRL_Y  
 
 
-LV_IMG_DECLARE(logo_setting);
+// LV_IMG_DECLARE(logo_setting);
 LV_IMG_DECLARE(logo_fan);
 LV_IMG_DECLARE(logo_ac);
 LV_IMG_DECLARE(astronaut1);
@@ -346,6 +346,5 @@ void show_main_page(void){
 
 /* 
     改3D外壳
-    改用 LV_OBJ_FLAG_HIDDEN 而不是lv_obj_del_anim_ready_cb 
     移植新版ui
  */
