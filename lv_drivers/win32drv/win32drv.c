@@ -194,7 +194,7 @@ EXTERN_C bool lv_win32_init(
     g_window_handle = CreateWindowExW(
         WINDOW_EX_STYLE,
         WindowClass.lpszClassName,
-        L"LVGL Simulator for Windows Desktop",
+        L"exS3",
         WINDOW_STYLE,
         CW_USEDEFAULT,
         0,

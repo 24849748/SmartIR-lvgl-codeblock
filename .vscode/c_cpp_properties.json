@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lvgl/**",
-                "${workspaceFolder}/lv_drivers/**"
+                "${workspaceFolder}/lv_drivers/**",
+                "${workspaceFolder}/lv_apps/**"
+
             ],
             "defines": [
                 "_DEBUG",

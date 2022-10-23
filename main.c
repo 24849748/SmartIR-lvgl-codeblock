@@ -15,7 +15,13 @@
 // #include "lv_examples/src/lv_demo_widgets/lv_demo_widgets.h"
 #include "lv_drivers/win32drv/win32drv.h"
 
-#include "lv_apps/test/main_page.h"
+#include "lv_apps/page/main_page.h"
+#include "lv_apps/page/fan_page.h"
+#include "lv_apps/page/ac_page.h"
+#include "lv_apps/page/ctrl_page.h"
+#include "lv_apps/page/info_page.h"
+#include "lv_apps/anim/anim.h"
+#include "lv_apps/common/lv_common.h"
 
 #include <windows.h>
 
@@ -57,8 +63,20 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     printf("init over\n");
 
     /*Run the demo*/
+    /* do in first */
     bg_page();
-    show_main_page();
+    lv_init_btn_style();
+    init_custom_btn_style();
+
+    main_page_create_obj();
+    info_page_create_obj();
+    ac_page_create_obj();
+    fan_page_create_obj();
+    ctrl_page_create_obj();
+
+    main_page_anim_in(200);
+
+    // show_main_page();
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

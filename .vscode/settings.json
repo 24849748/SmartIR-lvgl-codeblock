@@ -13,6 +13,8 @@
         "cstdio": "c",
         "style.h": "c",
         "setting_page.h": "c",
-        "lv_common.h": "c"
+        "lv_common.h": "c",
+        "info_page.h": "c",
+        "template_page.h": "c"
     }
 }
