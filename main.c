@@ -20,6 +20,9 @@
 #include "lv_apps/page/ac_page.h"
 #include "lv_apps/page/ctrl_page.h"
 #include "lv_apps/page/info_page.h"
+
+#include "lv_apps/page/start_page.h"
+
 #include "lv_apps/anim/anim.h"
 #include "lv_apps/common/lv_common.h"
 
@@ -74,9 +77,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     fan_page_create_obj();
     ctrl_page_create_obj();
 
-    main_page_anim_in(200);
-
-    // show_main_page();
+    // main_page_anim_in(200);
+    start_page();
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

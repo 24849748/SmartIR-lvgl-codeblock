@@ -105,6 +105,9 @@
 		<Unit filename="lv_apps/img/astronaut9.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="lv_apps/img/bat_20px.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="lv_apps/img/logo_ac.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -140,10 +143,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lv_apps/page/main_page.h" />
-		<Unit filename="lv_apps/page/setting_page.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="lv_apps/page/setting_page.h" />
 		<Unit filename="lv_conf.h" />
 		<Unit filename="lv_demo_conf.h" />
 		<Unit filename="lv_drivers/display/ILI9341.h" />
