@@ -25,14 +25,18 @@ void anim_opa_cb(void * var, int32_t v){
  * @brief anim中隐藏obj回调
  */
 void lv_obj_hide_anim_ready_cb(lv_anim_t * a){
-    lv_obj_add_flag(a->var, LV_OBJ_FLAG_HIDDEN);
+    if(!lv_obj_has_flag(a->var, LV_OBJ_FLAG_HIDDEN)){   //如果当前是显示状态（没有隐藏flag）
+        lv_obj_add_flag(a->var, LV_OBJ_FLAG_HIDDEN);    //隐藏
+    }else {
+        return;
+    }
 }
 /**
  * @brief anim中显示obj回调
  */
 void lv_obj_show_anim_ready_cb(lv_anim_t * a){
-    if(lv_obj_has_flag(a->var, LV_OBJ_FLAG_HIDDEN)){
-        lv_obj_clear_flag(a->var, LV_OBJ_FLAG_HIDDEN);
+    if(lv_obj_has_flag(a->var, LV_OBJ_FLAG_HIDDEN)){    //如果当前是隐藏状态
+        lv_obj_clear_flag(a->var, LV_OBJ_FLAG_HIDDEN);  //取向隐藏
     }else {
         return;
     }
@@ -187,4 +191,33 @@ void anim_step_out(lv_obj_t *obj, uint32_t delay){
 
 
 
-
+/**
+ * @brief notify bar进场动画
+ */
+void anim_y_liner_in(lv_obj_t *obj, int32_t start, int32_t end, uint32_t delay){
+    lv_anim_t a;
+    lv_anim_init(&a);
+    lv_anim_set_var(&a, obj);
+    lv_anim_set_values(&a, start, end);
+    lv_anim_set_time(&a, 200);
+    lv_anim_set_delay(&a, delay);
+    lv_anim_set_exec_cb(&a, anim_y_cb);
+    // lv_anim_set_ready_cb(&a, lv_obj_show_anim_ready_cb);
+    lv_anim_set_path_cb(&a, lv_anim_path_linear);
+    lv_anim_start(&a);
+}
+/**
+ * @brief notify bar出场动画
+ */
+void anim_y_liner_out(lv_obj_t *obj, int32_t start, int32_t end, uint32_t delay){
+    lv_anim_t a;
+    lv_anim_init(&a);
+    lv_anim_set_var(&a, obj);
+    lv_anim_set_values(&a, start, end);
+    lv_anim_set_time(&a, 200);
+    lv_anim_set_delay(&a, delay);
+    lv_anim_set_exec_cb(&a, anim_y_cb);
+    // lv_anim_set_ready_cb(&a, lv_obj_hide_anim_ready_cb);
+    lv_anim_set_path_cb(&a, lv_anim_path_linear);
+    lv_anim_start(&a);
+}

@@ -342,9 +342,3 @@ void show_main_page(void){
         main_page_anim_in(200);
     }
 }
-
-
-/* 
-    改3D外壳
-    移植新版ui
- */

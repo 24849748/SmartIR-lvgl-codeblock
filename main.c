@@ -28,6 +28,7 @@
 
 #include <windows.h>
 
+#include "lv_apps/page/notify_bar.h"
 
 /*********************
  *      DEFINES
@@ -68,7 +69,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     /*Run the demo*/
     /* do in first */
     bg_page();
-    lv_init_btn_style();
     init_custom_btn_style();
 
     main_page_create_obj();
@@ -78,7 +78,12 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     ctrl_page_create_obj();
 
     // main_page_anim_in(200);
-    start_page();
+    // start_page();
+    create_notify_timer();
+    create_brightnessBar();
+    create_handle_btn();
+    
+    
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

@@ -8,6 +8,7 @@
 #define COORD_GIF_X 15
 #define COORD_GIF_Y -35
 
+#define START_TIME  500     // load界面执行时间
 
 LV_IMG_DECLARE(loadimg1);
 LV_IMG_DECLARE(loadimg2);
@@ -103,7 +104,7 @@ void start_page(void){
     lv_anim_init(&a);
     lv_anim_set_var(&a, loadBar);
     lv_anim_set_exec_cb(&a, setBarValue);
-    lv_anim_set_time(&a, 3000);
+    lv_anim_set_time(&a, START_TIME);
     lv_anim_set_values(&a, 5, 95);
     lv_anim_set_delay(&a, 500);
     lv_anim_start(&a);
