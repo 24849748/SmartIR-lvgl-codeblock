@@ -159,134 +159,31 @@ void create_time_bg(){
     lv_obj_t *time = lv_label_create(time_bg);
     int hour = 13, min = 35;
     lv_obj_align(time, LV_ALIGN_LEFT_MID, 2, 0);
-    lv_label_set_recolor(time, true);
+    lv_obj_set_style_text_color(time, lv_color_white(), 0);
     lv_obj_set_style_text_font(time, &HmOS_45pxnum, 0);
-    lv_label_set_text_fmt(time, "#ffffff %d:%d", hour, min);
+    lv_label_set_text_fmt(time, "%d:%d", hour, min);
 
 }
 
 void create_buttons(void){
     /* info button */
-    btn_info = lv_btn_create(bg_screen);
-    lv_obj_remove_style_all(btn_info);
-
-    lv_obj_add_style(btn_info, &style_btn, LV_STATE_DEFAULT);
-    lv_obj_add_style(btn_info, &style_btn_pr, LV_STATE_PRESSED);
-
-    lv_obj_set_size(btn_info, 90, 60);
+    btn_info = bosco_create_btn1(90, 60, btn_info_cb, "Info");
     lv_obj_align(btn_info, LV_ALIGN_LEFT_MID, 20, 10);
 
-    lv_obj_add_event_cb(btn_info, btn_info_cb, LV_EVENT_CLICKED, NULL);
-
-    lv_obj_t * info_label = lv_label_create(btn_info);
-    lv_label_set_recolor(info_label, true);
-    lv_label_set_text(info_label, "#ffffff Info");
-    lv_obj_align(info_label, LV_ALIGN_TOP_LEFT, 5, 5);
-
-    
-
     /* control button */
-    btn_ctrl = lv_btn_create(bg_screen);
-    lv_obj_remove_style_all(btn_ctrl);
-    // lv_obj_add_flag(btn_info, LV_OBJ_FLAG_CLICKABLE);
-    
-    lv_obj_add_style(btn_ctrl, &style_btn, LV_STATE_DEFAULT);
-    lv_obj_add_style(btn_ctrl, &style_btn_pr, LV_STATE_PRESSED);
-
-    lv_obj_set_size(btn_ctrl, 90, 60);
+    btn_ctrl = bosco_create_btn1(90, 60, btn_ctrl_cb, "Control");
     lv_obj_align(btn_ctrl, LV_ALIGN_LEFT_MID, 20, 90);
 
-    lv_obj_add_event_cb(btn_ctrl, btn_ctrl_cb, LV_EVENT_CLICKED, NULL);
-
-    lv_obj_t * ctrl_label = lv_label_create(btn_ctrl);
-    lv_label_set_recolor(ctrl_label, true);
-    lv_label_set_text(ctrl_label, "#ffffff Control");
-    lv_obj_align(ctrl_label, LV_ALIGN_TOP_LEFT, 5, 5);
-
-
     /* ac button */
-    btn_ac = lv_obj_create(bg_screen);
-    lv_obj_remove_style_all(btn_ac);
-    
-    lv_obj_add_style(btn_ac, &style_btn, LV_STATE_DEFAULT);
-    lv_obj_add_style(btn_ac, &style_btn_pr, LV_STATE_PRESSED);
-
-    lv_obj_set_size(btn_ac, 90, 60);
+    btn_ac = bosco_create_btn1(90, 60, btn_ac_cb, "Ac");
     lv_obj_align(btn_ac, LV_ALIGN_RIGHT_MID, -20, 10);
-    lv_obj_add_event_cb(btn_ac, btn_ac_cb, LV_EVENT_CLICKED, NULL);
-
-    lv_obj_t * ac_label = lv_label_create(btn_ac);
-    lv_label_set_recolor(ac_label, true);
-    lv_label_set_text(ac_label, "#ffffff Ac");
-    lv_obj_align(ac_label, LV_ALIGN_TOP_LEFT, 5, 5);
-
-    // lv_obj_t *ac_logo = lv_img_create(btn_ac);
-    // lv_img_set_src(ac_logo, &logo_ac);
-    // lv_obj_align(ac_logo, LV_ALIGN_CENTER, 0, 0);
-    
-
 
     /* fan button */
-    btn_fan = lv_obj_create(bg_screen);
-    lv_obj_remove_style_all(btn_fan);
-    
-    lv_obj_add_style(btn_fan, &style_btn, LV_STATE_DEFAULT);
-    lv_obj_add_style(btn_fan, &style_btn_pr, LV_STATE_PRESSED);
-
-    lv_obj_set_size(btn_fan, 90, 60);
+    btn_fan = bosco_create_btn1(90, 60, btn_fan_cb, "Fan");
     lv_obj_align(btn_fan, LV_ALIGN_RIGHT_MID, -20, 90);
-
-    lv_obj_add_event_cb(btn_fan, btn_fan_cb, LV_EVENT_CLICKED, NULL);
-    // lv_obj_t *fan_logo = lv_img_create(btn_fan);
-    // lv_img_set_src(fan_logo, &logo_fan);
-    // lv_obj_align(fan_logo, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_t * fan_label = lv_label_create(btn_fan);
-    lv_label_set_recolor(fan_label, true);
-    lv_label_set_text(fan_label, "#ffffff Fan");
-    lv_obj_align(fan_label, LV_ALIGN_TOP_LEFT, 5, 5);
 }
 
-// void create_main_page_btn(void){
 
-//     /* 空调按键 */
-//     btn_ac = lv_img_create(bg_screen);
-//     lv_obj_add_style(btn_ac, &style_btn_pressed, LV_STATE_PRESSED);
-//     lv_obj_add_style(btn_ac, &style_outline_focused, LV_STATE_FOCUSED);
-//     // lv_obj_set_style_transform_zoom(btn_ac, 230, 0);
-//     lv_obj_add_flag(btn_ac, LV_OBJ_FLAG_CLICKABLE);
-//     lv_obj_add_event_cb(btn_ac, btn_ac_cb, LV_EVENT_CLICKED, NULL);
-//     lv_img_set_src(btn_ac, &logo_ac);
-//     lv_obj_align(btn_ac, LV_ALIGN_BOTTOM_MID, 0,-70);
-//     // lv_obj_align_to(btn_ac, btn_setting, LV_ALIGN_CENTER, -70, 0);
-//     // lv_obj_align(btn_ac, LV_ALIGN_BOTTOM_MID, -50,-70);
-
-//     /* 设置按键 */
-//     btn_setting = lv_img_create(bg_screen);
-//     lv_obj_add_style(btn_setting, &style_btn_pressed, LV_STATE_PRESSED);
-//     lv_obj_add_style(btn_setting, &style_outline_focused, LV_STATE_FOCUSED);
-//     // lv_obj_set_style_transform_zoom(btn_setting, 220, 0);
-//     lv_obj_add_flag(btn_setting, LV_OBJ_FLAG_CLICKABLE);
-//     lv_obj_add_event_cb(btn_setting, btn_setting_cb, LV_EVENT_CLICKED, NULL);
-//     lv_img_set_src(btn_setting, &logo_setting);
-//     // lv_obj_align(btn_setting, LV_ALIGN_BOTTOM_MID, 0,-70);
-//     // lv_obj_align_to(btn_setting, btn_ac, LV_ALIGN_CENTER, -70, 0);
-//     lv_obj_align(btn_setting, LV_ALIGN_BOTTOM_MID, -70, -70);
-
-//     /* 风扇按键 */
-//     btn_fan = lv_img_create(bg_screen);
-//     lv_obj_add_style(btn_fan, &style_btn_pressed, LV_STATE_PRESSED);
-//     lv_obj_add_style(btn_fan, &style_outline_focused, LV_STATE_FOCUSED);
-//     lv_obj_set_style_transform_zoom(btn_fan, 220, 0);
-//     lv_obj_add_flag(btn_fan, LV_OBJ_FLAG_CLICKABLE);
-//     lv_obj_add_event_cb(btn_fan, btn_fan_cb, LV_EVENT_CLICKED, NULL);
-//     lv_img_set_src(btn_fan, &logo_fan);
-//     // lv_obj_align_to(btn_fan, btn_ac, LV_ALIGN_CENTER, 70, 0);
-//     lv_obj_align(btn_fan, LV_ALIGN_BOTTOM_MID, 70,-70);
-//     // lv_obj_align(btn_fan, LV_ALIGN_BOTTOM_MID, 50, -70);
-
-
-
-// }
 
 
 /*************************

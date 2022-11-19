@@ -78,11 +78,12 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     ctrl_page_create_obj();
 
     // main_page_anim_in(200);
-    // start_page();
-    create_notify_timer();
-    create_brightnessBar();
-    create_handle_btn();
+    start_page();
+
     
+    // create_notify_timer();
+    // create_brightnessBar();
+    // create_handle_btn();
     
 
     while(!lv_win32_quit_signal) {
