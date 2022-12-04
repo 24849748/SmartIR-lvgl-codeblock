@@ -1,6 +1,6 @@
 #include "main_page.h"
 #include "fan_page.h"
-// #include "setting_page.h"
+// #include "muyu_page.h"
 #include "ac_page.h"
 #include "info_page.h"
 #include "ctrl_page.h"

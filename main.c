@@ -23,6 +23,8 @@
 
 #include "lv_apps/page/start_page.h"
 
+#include "lv_apps/page/muyu_page.h"
+
 #include "lv_apps/anim/anim.h"
 #include "lv_apps/common/lv_common.h"
 
@@ -76,10 +78,13 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     ac_page_create_obj();
     fan_page_create_obj();
     ctrl_page_create_obj();
+    muyu_page_create_obj();
 
-    // main_page_anim_in(200);
+    
+
     start_page();
 
+    
     
     // create_notify_timer();
     // create_brightnessBar();
